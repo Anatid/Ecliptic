@@ -1,24 +1,16 @@
 ﻿using System;
+using System.Reflection;
 using UnityEngine;
 using KSP.IO;
 
 namespace Ecliptic
 {
-    public class EclipticBase : TutorialScenario
+    public abstract class EclipticBase : TutorialScenario
     {
+        #region Settings
+
         protected static string playerName = "Engineer";
         protected PluginConfiguration settings = PluginConfiguration.CreateForType<EclipticBase>();
-
-        //apparently we can't just use a static initializer because GUI.skin can only be used within OnGUI
-        protected static GUIStyle _instrStyle;
-        protected static GUIStyle instrStyle
-        {
-            get
-            {
-                if (_instrStyle == null) _instrStyle = Style(Color.cyan, FontStyle.Italic);
-                return _instrStyle;
-            }
-        }
 
         protected void LoadSettings()
         {
@@ -32,21 +24,25 @@ namespace Ecliptic
             settings.save();
         }
 
+        #endregion
+
+        #region Events
+
         //TutorialScenario implements these update functions, but keeps them private.
         //When we reimplement them we hide them from Unity, so we duplicate
         //the TutorialScenario functionality (namely, call Tutorial.XXXXXFSM())
         //and then call OnX, which is virtual so that subclasses can override it properly.
-        protected void FixedUpdate()
+        private void FixedUpdate()
         {
             if (Tutorial.Started) Tutorial.FixedUpdateFSM();
             OnFixedUpdate();
         }
-        protected void Update()
+        private void Update()
         {
             if (Tutorial.Started) Tutorial.UpdateFSM();
             OnUpdate();
         }
-        protected void LateUpdate()
+        private void LateUpdate()
         {
             if (Tutorial.Started) Tutorial.LateUpdateFSM();
             OnLateUpdate();
@@ -56,8 +52,61 @@ namespace Ecliptic
         protected virtual void OnUpdate() { }
         protected virtual void OnLateUpdate() { }
 
+        #endregion
 
+        #region Show/Hide Functions
 
+        protected bool showWindow = true;
+
+        protected Action _BaseOnGUI = null;
+        protected Action BaseOnGUI
+        {
+            get
+            {
+                if (_BaseOnGUI == null)
+                {
+                    MethodInfo method = typeof(TutorialScenario).GetMethod("OnGUI", BindingFlags.Instance | BindingFlags.NonPublic);
+                    Debug.Log("method == null? " + (method == null));
+                    _BaseOnGUI = (Action)Delegate.CreateDelegate(typeof(Action), (TutorialScenario)this, method);
+                }
+                return _BaseOnGUI;
+            }
+        }
+
+        // Deliberately hide base.OnGUI() so that we can choose when to
+        // display the tutorial window.
+        protected void OnGUI()
+        {
+            if (showWindow) BaseOnGUI();
+        }
+
+        protected void HideTutorialWindow()
+        {
+            //SetDialogRect(new Rect(Screen.width, 100, 0, 0));
+            showWindow = false;
+        }
+
+        protected void UnhideTutorialWindow()
+        {
+            //SetDialogRect(new Rect(Screen.width / 5, Screen.height / 5, 400, 100));
+            showWindow = true;
+        }
+
+        #endregion
+
+        #region Instructors
+
+        protected enum Instructor { Gene, Werner }
+        protected abstract Instructor npc { get; }
+
+        protected override void OnAssetSetup()
+        {
+            if(npc == Instructor.Gene) instructorPrefabName = "Instructor_Gene";
+        }
+
+        #endregion
+
+        #region Pages Setup
 
         protected TutorialPage AddPage(String windowTitle, Callback onEnter = null)
         {
@@ -118,15 +167,9 @@ namespace Ecliptic
             };
         }
 
-        protected void HideTutorialWindow()
-        {
-            SetDialogRect(new Rect(Screen.width, 100, 0, 0));
-        }
-
-        protected void UnhideTutorialWindow()
-        {
-            SetDialogRect(new Rect(Screen.width / 5, Screen.height / 5, 400, 100));
-        }
+        #endregion
+        
+        #region GUI Utilities
 
         protected static GUIStyle Style(params object[] args)
         {
@@ -141,6 +184,16 @@ namespace Ecliptic
             return s;
         }
 
+        //apparently we can't just use a static initializer because GUI.skin can only be used within OnGUI
+        protected static GUIStyle _instrStyle;
+        protected static GUIStyle instrStyle
+        {
+            get
+            {
+                if (_instrStyle == null) _instrStyle = Style(Color.cyan, FontStyle.Italic);
+                return _instrStyle;
+            }
+        }
 
         protected static String TimeString(double seconds)
         {
@@ -161,5 +214,7 @@ namespace Ecliptic
             if ((int)seconds != 0) ret += ((int)seconds).ToString() + ((int)seconds > 1 ? " seconds" : " second");
             return ret;
         }
+
+        #endregion
     }
 }

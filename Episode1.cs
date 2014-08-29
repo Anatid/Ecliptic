@@ -11,6 +11,8 @@ namespace Ecliptic
         TutorialPage firstBriefingPage, finishedBriefingPage;
         public static bool finishedBriefing = false;
 
+        protected override Instructor npc { get { return Instructor.Werner; } }
+        
         protected override void OnTutorialSetup()
         {
             if (finishedBriefing) return;
@@ -67,11 +69,7 @@ namespace Ecliptic
 
         double victoryUT;
 
-        protected override void OnAssetSetup()
-        {
-            instructorPrefabName = "Instructor_Gene";
-        }
-
+        protected override Instructor npc { get { return Instructor.Gene; } }
 
         //        public override void OnAwake()
         void Init()
@@ -163,7 +161,7 @@ namespace Ecliptic
             callPage.OnDrawContent = () =>
             {
                 GUILayout.Label("Hi there, " + playerName + ". I need you to report to the tracking station immediately. We've got an urgent call on the line from an old friend of mine at KHC. I'll meet you there.\n\n");
-                GUILayout.Label("End this flight and go to the Tracking Station", instrStyle);
+                GUILayout.Label("Go to the Tracking Station", instrStyle);
                 if (GUILayout.Button("\"Right away, Director\"")) Tutorial.GoToNextPage();
             };
 
@@ -233,7 +231,7 @@ namespace Ecliptic
                 GUILayout.Label("You've done it! What a relief, even if we still don't know what the hell was going on--");
                 GUILayout.Label("In the background, you hear shouting at the KHC end of the connection:", instrStyle);
                 GUILayout.Label("“Colonel, radar contact! Correction, contacts! Multiple radar contacts beyond minimal orbit! They all appeared at once! More--I don't know how many! I think they're–”");
-
+                GUILayout.Label("Without warning, the connection to KHC goes dead.", instrStyle);
                 GUILayout.Label("TO BE CONTINUED", Style(TextAnchor.UpperCenter, Color.yellow, FontStyle.Bold), GUILayout.ExpandHeight(true));
 
                 if (GUILayout.Button("End Mission")) Tutorial.GoToNextPage();
