@@ -1,0 +1,999 @@
+GAME
+{
+	version = 0.21.0
+
+        Title = Ecliptic: Episode One
+	Description = In which our hero is called upon to face the unknown.
+
+        // mode 0: Sandbox - mode 1: Career (not available yet), mode 2: Scenario, mode 3: Non-Resumable Scenario
+	Mode = 3
+
+        //What does this do?!
+        Status = 1
+
+        // scene to load when starting this save.
+        // 1 = loading screen, 2 = title screen, 3 = settings screen, 4 = credits, 5 = KSC, 6 = VAB,
+        // 7 = flight, 8 = tracking station, 9 = SPH
+	scene = 7
+
+       	flag = Squad/Flags/default
+
+        PARAMETERS
+	{
+	        FLIGHT
+		{
+			CanQuickSave = True
+			CanQuickLoad = True
+			CanAutoSave = True
+			CanUseMap = True
+			CanSwitchVesselsNear = True
+			CanSwitchVesselsFar = False
+			CanTimeWarpHigh = True
+			CanTimeWarpLow = True
+			CanEVA = True
+			CanIVA = True
+			CanBoard = True
+			CanRestart = True
+			CanLeaveToEditor = True
+			CanLeaveToTrackingStation = True
+			CanLeaveToSpaceCenter = True
+			CanLeaveToMainMenu = True
+		}
+		EDITOR
+		{
+			CanSave = True
+			CanLoad = True
+			CanStartNew = True
+			CanLaunch = True
+			CanLeaveToSpaceCenter = True
+			CanLeaveToMainMenu = True
+			startUpMode = 0
+			craftFileToLoad =
+		}
+		TRACKINGSTATION
+		{
+			CanFlyVessel = False
+			CanAbortVessel = True
+			CanLeaveToSpaceCenter = True
+			CanLeaveToMainMenu = True
+		}
+		SPACECENTER
+		{
+			CanGoInVAB = True
+			CanGoInSPH = True
+			CanGoInTrackingStation = True
+			CanLaunchAtPad = True
+			CanLaunchAtRunway = True
+			CanLeaveToMainMenu = True
+		}
+
+        }
+        FLIGHTSTATE
+        {
+                version = 0.18.1
+		UT = 16675352.5125756
+		activeVessel = 0
+		VESSEL
+		{
+			pid = 189eb8f64dae4368ac6095aa34c03246
+			name = Moho VII
+			type = Ship
+			sit = ORBITING
+			landed = False
+			landedAt =
+			splashed = False
+			met = 19.7999995574355
+			lct = 16209696.9424282
+			root = 0
+			lat = 3.3832036640965E-10
+			lon = 111.920896469627
+			alt = 75000.2526298359
+			hgt = -1
+			nrm = -0.1137038,-0.9935111,-0.002666854
+			rot = -0.7010582,-0.09213408,-0.09724555,0.7004085
+			CoM = 0.0007215004,0.05183316,0.002686259
+			stg = 1
+			prst = False
+			eva = False
+			ref = 2067277650
+			ORBIT
+			{
+				SMA = 674999.417969833
+				ECC = 3.91815104131998E-05
+				INC = 0
+				LPE = 2.27254803463249
+				LAN = 269.896114035081
+				//1 second is approximately 0.0035 rad
+				MNA = 3.53401064816
+				EPH = 16209716.8024278
+				REF = 1
+				OBJ = 0
+			}
+			PART
+			{
+				name = mk1pod
+				uid = 2067277650
+				parent = 0
+				position = 0,0,0
+				rotation = 0,0,0,1
+				mirror = 1,1,1
+				istg = 0
+				dstg = 0
+				sqor = -1
+				sidx = -1
+				attm = 0
+				srfN = None, -1
+				attN = None, -1
+				attN = None, -1
+				mass = 0.8
+				temp = -188.7845
+				expt = 0.5
+				state = 1
+				connected = True
+				attached = True
+				crew = 0
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				MODULE
+				{
+					name = ModuleCommand
+					isEnabled = True
+					controlSrcStatusText = Operational
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+				}
+				RESOURCE
+				{
+					name = ElectricCharge
+					amount = 50
+					maxAmount = 50
+					flowState = True
+					flowMode = Both
+				}
+			}
+			ACTIONGROUPS
+			{
+				Stage = False, 212.080000000035
+				Gear = True, 0
+				Light = False, 0
+				RCS = False, 0
+				SAS = False, 69.4600000000034
+				Brakes = False, 0
+				Abort = False, 0
+				Custom01 = False, 0
+				Custom02 = False, 0
+				Custom03 = False, 0
+				Custom04 = False, 0
+				Custom05 = False, 0
+				Custom06 = False, 0
+				Custom07 = False, 0
+				Custom08 = False, 0
+				Custom09 = False, 0
+				Custom10 = False, 0
+			}
+		}
+		VESSEL
+		{
+			pid = 2d68746bc7c641f79fd179d7ced98dca
+			name = Incoming Object
+			type = Unknown
+			sit = ESCAPING
+			landed = False
+			landedAt =
+			splashed = False
+			met = 16675329.8725756
+			lct = 22.6199999999996
+			root = 0
+			lat = 3.03730755387923
+			lon = 86.3894182313029
+			alt = 82384659.3431424
+			hgt = -1
+			nrm = 0.02346592,-0.9997245,0.0006768159
+			rot = -0.4951907,-0.4714701,-0.53076,0.5007953
+			CoM = 9.14456E-08,-2.48318,3.258773E-06
+			stg = 0
+			prst = False
+			eva = False
+			ref = 4078009623
+			ORBIT
+			{
+				SMA = -6564252.04789137
+				ECC = 1.03604197967152
+				INC = 176.520800701556
+				LPE = 282.836963253062
+				LAN = 298.153282160509
+				MNA = -10.3330675206495
+				EPH = 16675352.5125756
+				REF = 1
+				OBJ = 0
+			}
+                        PART
+			{
+				name = nuclearEngine
+				uid = 970106535
+				parent = 0
+				position = 0,0,0
+				rotation = 0,0,0,1
+				mirror = 1,1,1
+				istg = 1
+				dstg = 2
+				sqor = 1
+				sidx = 0
+				attm = 0
+				srfN = None, -1
+				attN = top, 1
+				attN = None, -1
+				mass = 2.25
+				temp = -91.05567
+				expt = 0.5
+				state = 0
+				connected = False
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				MODULE
+				{
+					name = ModuleEngines
+					isEnabled = True
+					EngineIgnited = False
+					engineShutdown = False
+					currentThrottle = 0
+					flameout = False
+					staged = False
+					EVENTS
+					{
+						Activate
+						{
+							active = True
+							guiActive = True
+							guiIcon = Activate Engine
+							guiName = Activate Engine
+							category = Activate Engine
+							guiActiveUnfocused = False
+							unfocusedRange = 2
+							externalToEVAOnly = True
+						}
+						Shutdown
+						{
+							active = False
+							guiActive = True
+							guiIcon = Shutdown Engine
+							guiName = Shutdown Engine
+							category = Shutdown Engine
+							guiActiveUnfocused = False
+							unfocusedRange = 2
+							externalToEVAOnly = True
+						}
+					}
+					ACTIONS
+					{
+						OnAction
+						{
+							actionGroup = None
+						}
+						ShutdownAction
+						{
+							actionGroup = None
+						}
+						ActivateAction
+						{
+							actionGroup = None
+						}
+					}
+				}
+				MODULE
+				{
+					name = ModuleJettison
+					isEnabled = True
+					EVENTS
+					{
+						Jettison
+						{
+							active = True
+							guiActive = True
+							guiIcon = Jettison
+							guiName = Jettison
+							category = Jettison
+							guiActiveUnfocused = False
+							unfocusedRange = 2
+							externalToEVAOnly = True
+						}
+					}
+					ACTIONS
+					{
+						JettisonAction
+						{
+							actionGroup = None
+						}
+					}
+				}
+				MODULE
+				{
+					name = ModuleJettison
+					isEnabled = True
+					EVENTS
+					{
+						Jettison
+						{
+							active = True
+							guiActive = True
+							guiIcon = Jettison
+							guiName = Jettison
+							category = Jettison
+							guiActiveUnfocused = False
+							unfocusedRange = 2
+							externalToEVAOnly = True
+						}
+					}
+					ACTIONS
+					{
+						JettisonAction
+						{
+							actionGroup = None
+						}
+					}
+				}
+				MODULE
+				{
+					name = ModuleGimbal
+					isEnabled = True
+					gimbalLock = False
+					EVENTS
+					{
+						LockGimbal
+						{
+							active = True
+							guiActive = True
+							guiIcon = Lock Gimbal
+							guiName = Lock Gimbal
+							category = Lock Gimbal
+							guiActiveUnfocused = False
+							unfocusedRange = 2
+							externalToEVAOnly = True
+						}
+						FreeGimbal
+						{
+							active = False
+							guiActive = True
+							guiIcon = Free Gimbal
+							guiName = Free Gimbal
+							category = Free Gimbal
+							guiActiveUnfocused = False
+							unfocusedRange = 2
+							externalToEVAOnly = True
+						}
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+						}
+					}
+				}
+				MODULE
+				{
+					name = ModuleAnimateHeat
+					isEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+				}
+			}
+			PART
+			{
+				name = fuelTank
+				uid = 1425817359
+				parent = 0
+				position = 0,2.36952018737793,0
+				rotation = 0,0,-1,0
+				mirror = 1,1,1
+				istg = 2
+				dstg = 2
+				sqor = -1
+				sidx = -1
+				attm = 0
+				srfN = None, -1
+				attN = top, 0
+				attN = bottom, 2
+				mass = 0.25
+				temp = -91.82121
+				expt = 0.5
+				state = 0
+				connected = True
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				RESOURCE
+				{
+					name = LiquidFuel
+					amount = 180
+					maxAmount = 180
+					flowState = True
+					flowMode = Both
+				}
+				RESOURCE
+				{
+					name = Oxidizer
+					amount = 220
+					maxAmount = 220
+					flowState = True
+					flowMode = Both
+				}
+			}
+			PART
+			{
+				name = fuelTank
+				uid = 2015293346
+				parent = 1
+				position = 0,4.24771022796631,0
+				rotation = 0,0,-1,0
+				mirror = 1,1,1
+				istg = 2
+				dstg = 2
+				sqor = -1
+				sidx = -1
+				attm = 0
+				srfN = None, -1
+				attN = top, 1
+				attN = bottom, 3
+				mass = 0.25
+				temp = -90.881
+				expt = 0.5
+				state = 0
+				connected = True
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				RESOURCE
+				{
+					name = LiquidFuel
+					amount = 180
+					maxAmount = 180
+					flowState = True
+					flowMode = Both
+				}
+				RESOURCE
+				{
+					name = Oxidizer
+					amount = 220
+					maxAmount = 220
+					flowState = True
+					flowMode = Both
+				}
+			}
+			PART
+			{
+				name = stackDecoupler
+				uid = 2887138331
+				parent = 2
+				position = 0,5.22525978088379,0
+				rotation = 0,0,-1,0
+				mirror = 1,1,1
+				istg = 2
+				dstg = 3
+				sqor = 2
+				sidx = 0
+				attm = 0
+				srfN = None, -1
+				attN = None, -1
+				attN = top, 2
+				mass = 0.05
+				temp = -90.47709
+				expt = 0.5
+				state = 0
+				connected = True
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				MODULE
+				{
+					name = ModuleDecouple
+					isEnabled = True
+					isDecoupled = False
+					staged = True
+					EVENTS
+					{
+						Decouple
+						{
+							active = True
+							guiActive = True
+							guiIcon = Decouple
+							guiName = Decouple
+							category = Decouple
+							guiActiveUnfocused = False
+							unfocusedRange = 2
+							externalToEVAOnly = True
+						}
+					}
+					ACTIONS
+					{
+						DecoupleAction
+						{
+							actionGroup = None
+						}
+					}
+				}
+			}
+			PART
+			{
+				name = ladder1
+				uid = 1810366728
+				parent = 1
+				position = 0.537330865859985,1.54244995117188,-0.310228139162064
+				rotation = -0.1830126,0.6830127,-0.6830127,-0.1830126
+				mirror = 1,1,1
+				istg = 2
+				dstg = 2
+				sqor = -1
+				sidx = -1
+				attm = 1
+				sym = 5
+				sym = 6
+				sym = 7
+				sym = 8
+				sym = 9
+				srfN = srfAttach, 1
+				mass = 0.005
+				temp = -90.80872
+				expt = 0.5
+				state = 0
+				connected = True
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+			}
+			PART
+			{
+				name = ladder1
+				uid = 2838088545
+				parent = 1
+				position = 0.537330865859985,1.54244995117188,0.310228258371353
+				rotation = 0.1830128,0.6830127,-0.6830127,0.1830128
+				mirror = 1,1,1
+				istg = 2
+				dstg = 2
+				sqor = -1
+				sidx = -1
+				attm = 1
+				sym = 4
+				sym = 6
+				sym = 7
+				sym = 8
+				sym = 9
+				srfN = srfAttach, 1
+				mass = 0.005
+				temp = -90.71706
+				expt = 0.5
+				state = 0
+				connected = True
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+			}
+			PART
+			{
+				name = ladder1
+				uid = 1093393496
+				parent = 1
+				position = -1.04308128356934E-07,1.54244995117188,0.620456278324127
+				rotation = 0.5000001,0.4999999,-0.4999999,0.5000001
+				mirror = 1,1,1
+				istg = 2
+				dstg = 2
+				sqor = -1
+				sidx = -1
+				attm = 1
+				sym = 4
+				sym = 5
+				sym = 7
+				sym = 8
+				sym = 9
+				srfN = srfAttach, 1
+				mass = 0.005
+				temp = -90.62573
+				expt = 0.5
+				state = 0
+				connected = True
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+			}
+			PART
+			{
+				name = ladder1
+				uid = 1754751430
+				parent = 1
+				position = -0.537330985069275,1.54244995117188,0.310228079557419
+				rotation = 0.6830128,0.1830126,-0.1830126,0.6830128
+				mirror = 1,1,1
+				istg = 2
+				dstg = 2
+				sqor = -1
+				sidx = -1
+				attm = 1
+				sym = 4
+				sym = 5
+				sym = 6
+				sym = 8
+				sym = 9
+				srfN = srfAttach, 1
+				mass = 0.005
+				temp = -90.53448
+				expt = 0.5
+				state = 0
+				connected = True
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+			}
+			PART
+			{
+				name = ladder1
+				uid = 3664128784
+				parent = 1
+				position = -0.53733092546463,1.54244995117188,-0.310228139162064
+				rotation = 0.6830127,-0.1830127,0.1830127,0.6830127
+				mirror = 1,1,1
+				istg = 2
+				dstg = 2
+				sqor = -1
+				sidx = -1
+				attm = 1
+				sym = 4
+				sym = 5
+				sym = 6
+				sym = 7
+				sym = 9
+				srfN = srfAttach, 1
+				mass = 0.005
+				temp = -90.4434
+				expt = 0.5
+				state = 0
+				connected = True
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+			}
+			PART
+			{
+				name = ladder1
+				uid = 825257068
+				parent = 1
+				position = 1.04308128356934E-07,1.54244995117188,-0.620456218719482
+				rotation = -0.4999999,0.5000001,-0.5000001,-0.4999999
+				mirror = 1,1,1
+				istg = 2
+				dstg = 2
+				sqor = -1
+				sidx = -1
+				attm = 1
+				sym = 4
+				sym = 5
+				sym = 6
+				sym = 7
+				sym = 8
+				srfN = srfAttach, 1
+				mass = 0.005
+				temp = -90.35281
+				expt = 0.5
+				state = 0
+				connected = True
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+			}
+			PART
+			{
+				name = ladder1
+				uid = 2144482859
+				parent = 1
+				position = 0.310150921344757,1.55123996734619,-0.537197351455688
+				rotation = -0.3535534,0.6123725,-0.6123725,-0.3535534
+				mirror = 1,1,1
+				istg = 2
+				dstg = 2
+				sqor = -1
+				sidx = -1
+				attm = 1
+				sym = 11
+				sym = 12
+				sym = 13
+				sym = 14
+				sym = 15
+				srfN = srfAttach, 1
+				mass = 0.005
+				temp = -90.26205
+				expt = 0.5
+				state = 0
+				connected = True
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+			}
+			PART
+			{
+				name = ladder1
+				uid = 2471623846
+				parent = 1
+				position = 0.620301961898804,1.55123996734619,5.0058588385582E-09
+				rotation = 1.744523E-08,0.7071068,-0.7071068,1.744523E-08
+				mirror = 1,1,1
+				istg = 2
+				dstg = 2
+				sqor = -1
+				sidx = -1
+				attm = 1
+				sym = 10
+				sym = 12
+				sym = 13
+				sym = 14
+				sym = 15
+				srfN = srfAttach, 1
+				mass = 0.005
+				temp = -90.17166
+				expt = 0.5
+				state = 0
+				connected = True
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+			}
+			PART
+			{
+				name = ladder1
+				uid = 3032499283
+				parent = 1
+				position = 0.310150980949402,1.55123996734619,0.537197291851044
+				rotation = 0.3535534,0.6123725,-0.6123725,0.3535534
+				mirror = 1,1,1
+				istg = 2
+				dstg = 2
+				sqor = -1
+				sidx = -1
+				attm = 1
+				sym = 10
+				sym = 11
+				sym = 13
+				sym = 14
+				sym = 15
+				srfN = srfAttach, 1
+				mass = 0.005
+				temp = -90.08139
+				expt = 0.5
+				state = 0
+				connected = True
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+			}
+			PART
+			{
+				name = ladder1
+				uid = 2911932638
+				parent = 1
+				position = -0.310151010751724,1.55123996734619,0.537197351455688
+				rotation = 0.6123725,0.3535534,-0.3535534,0.6123725
+				mirror = 1,1,1
+				istg = 2
+				dstg = 2
+				sqor = -1
+				sidx = -1
+				attm = 1
+				sym = 10
+				sym = 11
+				sym = 12
+				sym = 14
+				sym = 15
+				srfN = srfAttach, 1
+				mass = 0.005
+				temp = -89.99133
+				expt = 0.5
+				state = 0
+				connected = True
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+			}
+			PART
+			{
+				name = ladder1
+				uid = 3440806746
+				parent = 1
+				position = -0.620302021503448,1.55123996734619,1.59954652190208E-07
+				rotation = 0.7071068,5.837855E-08,-5.837855E-08,0.7071068
+				mirror = 1,1,1
+				istg = 2
+				dstg = 2
+				sqor = -1
+				sidx = -1
+				attm = 1
+				sym = 10
+				sym = 11
+				sym = 12
+				sym = 13
+				sym = 15
+				srfN = srfAttach, 1
+				mass = 0.005
+				temp = -89.90143
+				expt = 0.5
+				state = 0
+				connected = True
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+			}
+			PART
+			{
+				name = ladder1
+				uid = 2384013931
+				parent = 1
+				position = -0.310151010751724,1.55123996734619,-0.537197232246399
+				rotation = -0.6123725,0.3535534,-0.3535534,-0.6123725
+				mirror = 1,1,1
+				istg = 2
+				dstg = 2
+				sqor = -1
+				sidx = -1
+				attm = 1
+				sym = 10
+				sym = 11
+				sym = 12
+				sym = 13
+				sym = 14
+				srfN = srfAttach, 1
+				mass = 0.005
+				temp = -89.8119
+				expt = 0.5
+				state = 0
+				connected = True
+				attached = True
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+			}
+			ACTIONGROUPS
+			{
+				Stage = False, 0
+				Gear = True, 0
+				Light = False, 0
+				RCS = False, 0
+				SAS = False, 0
+				Brakes = False, 0
+				Abort = False, 0
+				Custom01 = False, 0
+				Custom02 = False, 0
+				Custom03 = False, 0
+				Custom04 = False, 0
+				Custom05 = False, 0
+				Custom06 = False, 0
+				Custom07 = False, 0
+				Custom08 = False, 0
+				Custom09 = False, 0
+				Custom10 = False, 0
+			}
+		}
+        }
+	ROSTER
+	{
+		CREW
+		{
+			name = Jebediah Kerman
+			brave = 0.5
+			dumb = 0.5
+			badS = True
+			state = 1
+			ToD = 0
+			idx = 0
+		}
+		CREW
+		{
+			name = Bill Kerman
+			brave = 0.5
+			dumb = 0.8
+			badS = False
+			state = 1
+			ToD = 0
+			idx = 1
+		}
+		CREW
+		{
+			name = Bob Kerman
+			brave = 0.3
+			dumb = 0.1
+			badS = False
+			state = 1
+			ToD = 0
+			idx = 2
+		}
+		APPLICANTS
+		{
+		}
+	}
+        SCENARIO
+        {
+               // the name of the ScenarioModule class to spawn
+	       name = Episode1Tracking
+               scene = 8
+        }
+        SCENARIO
+        {
+               name = Episode1Flight
+               scene = 7
+        }
+
+}
